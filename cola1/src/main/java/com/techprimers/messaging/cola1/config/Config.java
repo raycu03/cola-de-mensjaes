@@ -27,8 +27,5 @@ public class Config {
         factory.setBrokerURL(brokerUrl);
         return factory;
     }
-    @Bean
-    public JmsTemplate jmsTemplate() {
-        return new JmsTemplate(activeMQConnectionFactory());
-    }
+
 }

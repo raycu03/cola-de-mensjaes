@@ -11,5 +11,8 @@ public class Consumer {
         System.out.println("Received Message: " + message);
     }
 
-
+    @JmsListener(destination = "cada")
+    public void consume2(String message) {
+        System.out.println("Received Message: " + message);
+    }
 }
