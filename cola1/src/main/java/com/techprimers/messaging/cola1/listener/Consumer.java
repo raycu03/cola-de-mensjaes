@@ -1,4 +1,4 @@
-package com.techprimers.messaging.standaloneactivemqexample.listener;
+package com.techprimers.messaging.cola1.listener;
 
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
