@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Consumer {
 
-    @JmsListener(destination = "Test")
+    @JmsListener(destination = "t1")
     public void consume(String message) {
         System.out.println("Received Message: " + message);
     }
@@ -15,4 +15,10 @@ public class Consumer {
     public void consume2(String message) {
         System.out.println("Received Message: " + message);
     }
+
+    @JmsListener(destination = "Test")
+    public void consume3(String message) {
+        System.out.println("Received Message: " + message);
+    }
+
 }

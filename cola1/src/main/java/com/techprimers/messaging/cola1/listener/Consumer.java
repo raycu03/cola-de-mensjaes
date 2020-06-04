@@ -1,7 +1,6 @@
 package com.techprimers.messaging.cola1.listener;
 
-import com.fasterxml.jackson.core.JsonStreamContext;
-import com.fasterxml.jackson.core.io.JsonStringEncoder;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.techprimers.messaging.cola1.Dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +31,15 @@ public class Consumer {
             System.out.println(userDto.getCode());
             System.out.println(userDto.getName());
         }catch (IOException e){
-            jmsTemplate.convertAndSend(queue, message);
+            jmsTemplate.convertAndSend(queue, "fallo");
         }
 
     }
+
+    @JmsListener(destination = "t1")
+    public void consume3(String message) {
+        System.out.println("Received Message: " + message);
+    }
+
 
 }
